@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ostamyy - Digimainonnan ammattilaiset</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* HEADER */
+
+header {
+  background: #0a1f44;
+  color: white;
+  padding: 15px 25px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* NAV */
+
+nav {
+  display: none;
+  flex-direction: column;
+  background: #0a1f44;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 220px;
+}
+
+nav a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* HAMBURGER */
+
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(to right, #0a1f44, #112e63);
+  color: white;
+  padding: 140px 20px 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 70px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0a1f44;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0a1f44;
+  margin: 10px 0;
+}
+
+/* CONTACT */
+
+.contact-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0a1f44;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #112e63;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0a1f44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* DESKTOP MENU */
+
+@media(min-width:768px) {
+
+.menu-btn {
+  display: none;
+}
+
+nav {
+  display: flex !important;
+  flex-direction: row;
+  position: static;
+  width: auto;
+}
+
+nav a {
+  border: none;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">Ostamyy</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
+      <a href="#etusivu">Etusivu</a>
+      <a href="#palvelut">Hinnasto</a>
+      <a href="#tietoa">Tietoa meistä</a>
+      <a href="#yhteys">Yhteystiedot</a>
+    </nav>
+  </div>
+</header>
+
+<div id="etusivu" class="hero">
+  <h1>Mainonnan ammattilaiset verkossa</h1>
+  <p>Ostamyy tarjoaa tehokkaita ja kohdennettuja mainospalveluita, jotka auttavat yrityksiä kasvamaan ja saavuttamaan näkyvyyttä sosiaalisessa mediassa.</p>
+</div>
+
+<section id="palvelut">
+  <div class="container">
+    <h2>Hinnasto</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Verkkosivuston suunnittelu</h3>
+        <p>Teemme puolestasi ammattimaisen verkkosivun yrityksellesi.</p>
+        <div class="price">190€</div>
+      </div>
+
+      <div class="card">
+        <h3>PERUSPAKETTI | 1 viikko</h3>
+        <ul>
+          <li>Snapchat story</li>
+          <li>Discord mainos everyone-tagilla</li>
+          <li>Yksi jako viikon aikana</li>
+        </ul>
+        <div class="price">39.90€</div>
+      </div>
+
+      <div class="card">
+        <h3>TEHOPAKETTI | 1 viikko</h3>
+        <ul>
+          <li>2x Snapchat story</li>
+          <li>2x Discord-mainos tägillä</li>
+          <li>Kaksi jakoa viikossa</li>
+        </ul>
+        <div class="price">59.90€</div>
+      </div>
+
+      <div class="card">
+        <h3>KUUKAUSIPAKETTI | 4 viikkoa</h3>
+        <ul>
+          <li>Peruspaketin sisältö</li>
+          <li>Edullisempi hinta per viikko</li>
+        </ul>
+        <div class="price">139€</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="tietoa">
+  <div class="container">
+    <h2>Tietoa meistä</h2>
+
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Ostamyy on verkkomainonnan ja digimarkkinoinnin palvelu, joka auttaa yrityksiä tavoittamaan laajemman yleisön ja kasvattamaan liiketoimintaansa verkossa. Olemme erikoistuneet kohdennettuun mainontaan erityisesti sosiaalisen median kanavissa.
+    </p>
+
+    <div class="cards" style="margin-top:40px;">
+
+      <div class="card">
+        <h3>Digitaalinen mainonta</h3>
+        <p>Tehokasta ja kohdennettua mainontaa Snapchatissa ja Discordissa laajalle kohdeyleisölle.</p>
+      </div>
+
+      <div class="card">
+        <h3>Sosiaalisen median markkinointi</h3>
+        <p>Nykyaikainen ja tuloksellinen näkyvyys sosiaalisessa mediassa kasvattaa myyntiä ja tunnettuutta.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="yhteys">
+  <div class="container">
+    <h2>Yhteystiedot</h2>
+
+    <div class="contact-box">
+
+      <p><b>Ostamyy</b></p>
+      <p>📞 +358417216027</p>
+      <p>✉️ ostamyy.mainostus@gmail.com</p>
+      <p>📸 @ostamyy</p>
+
+      <form action="mailto:ostamyy.mainostus@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="Nimi" placeholder="Nimi" required>
+        <input type="email" name="Email" placeholder="Sähköposti" required>
+        <textarea name="Viesti" rows="5" placeholder="Kirjoita viesti..." required></textarea>
+        <button type="submit">Lähetä viesti</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ostamyy — Kaikki oikeudet pidätetään</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+</script>
+
+</body>
+</html>
